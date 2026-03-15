@@ -2,13 +2,14 @@ import os
 import copy
 import json
 import logging
+from typing import Optional
 
 import numpy as np
 
 import torch
 from torch.utils.data import TensorDataset
 
-from .utils import get_labels, load_vocab, load_label_vocab, get_infer_dataset
+from utils import get_labels, load_vocab, load_label_vocab, get_infer_dataset
 
 logger = logging.getLogger(__name__)
 
@@ -95,7 +96,7 @@ class NaverNerProcessor(object):
             examples.append(InputExample(guid=guid, words=words, labels=labels))
         return examples
 
-    def get_examples(self, mode, sent):
+    def get_examples(self, mode, sent: Optional[str] = None):
         """
         Args:
             mode: train, dev, test

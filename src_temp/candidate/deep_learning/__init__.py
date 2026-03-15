@@ -1,1 +1,1 @@
-from .deep_extract import deep_candidate
+from deep_extract import deep_candidate

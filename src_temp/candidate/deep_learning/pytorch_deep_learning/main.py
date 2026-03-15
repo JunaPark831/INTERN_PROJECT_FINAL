@@ -2,9 +2,9 @@ import argparse
 import logging
 import warnings
 
-from .trainer import Trainer
-from .utils import init_logger
-from .data_loader import load_examples
+from trainer import Trainer
+from utils import init_logger
+from data_loader import load_examples
 
 def main(args, sent):
     logging.disable(logging.CRITICAL)
@@ -18,8 +18,8 @@ def main(args, sent):
     #     download_w2v(args)
 
 
-    # train_dataset = load_examples(args, mode="train")
-    train_dataset = None
+    train_dataset = load_examples(args, sent = "",mode="train")
+    # train_dataset = None
     dev_dataset = None
     # test_dataset = load_examples(args, mode="test")
     test_dataset = None
@@ -69,11 +69,11 @@ if __name__ == '__main__':
     parser.add_argument("--num_filters", default=32, type=int, help=" Number of filters for character cnn")
 
     parser.add_argument('--seed', type=int, default=42, help="random seed for initialization")
-    parser.add_argument("--train_batch_size", default=2048, type=int, help="Batch size for training")
+    parser.add_argument("--train_batch_size", default=256, type=int, help="Batch size for training")
     parser.add_argument("--eval_batch_size", default=128, type=int, help="Batch size for evaluation")
     parser.add_argument("--infer_batch_size", default=1, type=int, help="Batch size for inference")
     parser.add_argument("--learning_rate", default=0.005, type=float, help="The initial learning rate")
-    parser.add_argument("--num_train_epochs", default=1.0, type=float, help="Total number of training epochs to perform.")
+    parser.add_argument("--num_train_epochs", default=15.0, type=float, help="Total number of training epochs to perform.")
     parser.add_argument("--slot_pad_label", default="PAD", type=str, help="Pad token for slot label pad (to be ignore when calculate loss)")
     parser.add_argument("--ignore_index", default=0, type=int,
                         help='Specifies a target value that is ignored and does not contribute to the input gradient')

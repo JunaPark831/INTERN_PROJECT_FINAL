@@ -5,7 +5,8 @@ try:
     mecab = Mecab()
 except:
     from eunjeon import Mecab
-    mecab = Mecab('C:\\Python39\\Lib\\site-packages\\eunjeon\\data\\mecab-ko-dic-msvc\\mecabrc')
+    mecab = Mecab()
+    # mecab = Mecab('C:\\Python39\\Lib\\site-packages\\eunjeon\\data\\mecab-ko-dic-msvc\\mecabrc')
 
 
 def get_pos(txt: str) -> List[Tuple[str, str]]:

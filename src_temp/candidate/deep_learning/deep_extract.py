@@ -1,7 +1,7 @@
 from typing import Tuple, List
 import argparse
 
-from .pytorch_deep_learning import main
+from pytorch_deep_learning import main
 
 
 def parse_result(sent, infer_tag):
@@ -76,7 +76,7 @@ def deep_candidate(sent: str):
     parser.add_argument("--w2v_file", default="word_vector_300d.vec", type=str, help="Pretrained word vector file")
     parser.add_argument("--write_pred", action="store_true", help="Write prediction during evaluation")
 
-    parser.add_argument("--max_seq_len", default=250, type=int, help="Max sentence length")
+    parser.add_argument("--max_seq_len", default=100, type=int, help="Max sentence length")
     parser.add_argument("--max_word_len", default=10, type=int, help="Max word length")
     parser.add_argument("--word_vocab_size", default=100000, type=int, help="Maximum size of word vocabulary")
     parser.add_argument("--char_vocab_size", default=1000, type=int, help="Maximum size of character vocabulary")

@@ -1,8 +1,8 @@
 import torch
 import torch.nn as nn
-from TorchCRF import CRF
+from torchcrf import CRF
 
-from .utils import get_labels
+from utils import get_labels
 
 
 # class CharCNN(nn.Module):

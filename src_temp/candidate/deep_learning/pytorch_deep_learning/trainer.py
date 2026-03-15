@@ -11,8 +11,8 @@ from torch.optim import Adam
 _dir = os.path.dirname(os.path.abspath(__file__))
 
 # from data_loader import load_word_matrix
-from .utils import set_seed, load_vocab, compute_metrics, show_report, get_labels, get_test_texts
-from .model import BiLSTM_CNN_CRF
+from utils import set_seed, load_vocab, compute_metrics, show_report, get_labels, get_test_texts
+from model import BiLSTM_CNN_CRF
 
 logger = logging.getLogger(__name__)
 
